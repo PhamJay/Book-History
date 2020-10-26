@@ -1,7 +1,7 @@
 CREATE OR REPLACE TABLE books (
     id int NOT NULL AUTO_INCREMENT,
     title varchar(255) NOT NULL,
-    description varchar(255) NOT NULL,
+    description varchar(1024) NOT NULL,
     authors varchar(255) NOT NULL,
     publish_date date NOT NULL,
     CONSTRAINT books_pk PRIMARY KEY (id)
@@ -13,14 +13,17 @@ CREATE OR REPLACE TABLE books_log (
     timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     id int NOT NULL ,
     title varchar(255) NOT NULL,
-    description varchar(255) NOT NULL,
+    description varchar(1024) NOT NULL,
     authors varchar(255) NOT NULL,
     publish_date date NOT NULL,
     PRIMARY KEY (id,revision)
 );
 
 ALTER TABLE books_log
-ADD INDEX(revision);
+ENGINE = MyISAM;
+
+ALTER TABLE books_log
+ADD INDEX(id, revision);
 
 ALTER TABLE books_log
 MODIFY COLUMN revision int NOT NULL AUTO_INCREMENT;
