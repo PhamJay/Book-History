@@ -4,6 +4,14 @@ A small Angular application which displays the history of changes of book entiti
 
 Uses MariaDB as the Database.
 
+## Setup
+
+1. cd [ProjectDirectory]
+2. docker-compose -f MariaDB/docker-compose.yml up
+3. Navigate to localhost:8080 and log into the MariaDB Adminer using the credentials "root/example"
+4. Press "SQL Command" and execute the create and insert script (and optionally the test script)
+5. ng serve
+
 ## Original task description (for reference)
 
 Create a web front-end in Angular that displays the history of changes of book entities with pagination, filtering, ordering and optionally grouping.
