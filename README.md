@@ -9,9 +9,11 @@ Uses MariaDB as the Database.
 1. cd [ProjectDirectory]
 2. docker-compose -f MariaDB/docker-compose.yml up
 3. Navigate to localhost:8080 and log into the MariaDB Adminer using the credentials "root/example"
-4. Press "SQL Command" and execute the create and insert script (and optionally the test script)
-6. cd book-history
-5. ng serve
+4. Create a database called "books"
+5. Press "SQL Command" and execute the create and insert script (and optionally the test script)
+6. node server/server.js
+7. cd ../book-history
+8. ng serve
 
 ## Original task description (for reference)
 
